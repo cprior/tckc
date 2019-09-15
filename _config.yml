@@ -1,0 +1,51 @@
+title: template
+email: cprior@gmail.com
+description: >- 
+  Contains...
+description_de: >- # this means to ignore newlines until "baseurl:"
+  Enthaelt...
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+feed:
+  path: /biz/marketing/website/feed.xml
+
+source:        .
+layouts_dir:  ./biz/marketing/website/_layouts
+includes_dir: ./biz/marketing/website/_includes
+destination:  ./biz/marketing/website/_site
+data_dir:     ./data
+sass:
+    sass_dir: ./biz/marketing/website/assets/_sass
+
+exclude:
+#  - app
+  - data
+#  - tec
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "post"
+  -
+    scope:
+      path: "app/log/building-blocks"
+      type: "posts" #index.md is of type application_logical_building-blocks
+    values:
+      permalink: /app/log/building-blocks/:title.html
+      categories: application_logical_building-blocks
+  -
+    scope:
+      path: "tec/phy/building-blocks"
+      type: "posts" #index.md is of type technology-physical_building-blocks
+    values:
+      permalink: /tec/phy/building-blocks/:title.html
+      #categories: technology-physical_building-blocks

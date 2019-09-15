@@ -1,0 +1,17 @@
+
+*~
+*.sw[mnpcod]
+*.log
+*.tmp
+*.tmp.*
+log.txt
+.vscode/
+npm-debug.log*
+
+# Jekyll
+_site/
+Gemfile.lock
+
+
+.idea/
+.sass-cache/

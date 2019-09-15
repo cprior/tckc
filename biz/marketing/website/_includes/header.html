@@ -1,0 +1,24 @@
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <div class="title"><h1 id="title"><a href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a></h1>
+                    <p id="description">{{ site.description }}</p></div>
+                    <script>
+                    lang = navigator.language || navigator.userLanguage;
+                    var description = document.getElementById("description");
+                    if ( lang.indexOf("de") == 0) {
+                      description.innerHTML="{{ site.description_de }}";
+                    }
+                    </script>
+                <nav>
+                    <ul>
+                        <li><a href="#">nav ul li a</a></li>
+                        <li><a href="#">nav ul li a</a></li>
+                        <li><a href="#">nav ul li a</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
