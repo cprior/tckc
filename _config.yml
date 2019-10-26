@@ -1,9 +1,9 @@
-title: template
+title: TCKC
 email: cprior@gmail.com
 description: >- 
-  Contains...
+  Time-constrained kernel configuration
 description_de: >- # this means to ignore newlines until "baseurl:"
-  Enthaelt...
+  Kernel config und nur wenig Zeit
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 

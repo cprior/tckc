@@ -7,16 +7,35 @@ layout: default
 
         <article>
             <header>
-                <h1>article header h1</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
+                <h1>Problem</h1>
+                <p>In my household is a variety of rather ageing PC hardware from two or three vendors, a network printer, several modems and switches as well as a whole bunch of single-board computers. The notebooks were migrated over the years from Gentoo to Ubuntu because time is much more limited, usually two PCs with Windows are also around as well as one or two Apple things.</p>
+
+                <p>When I resurfaced an HP ProLiant Microserver (a small NAS-type of formfactor) the quest to use this energy-efficient device for as much as possible soon led me down the rabbit hole of custom kernel compilation. Armed with years of Gentoo-experience the task did not scare me, but when this took almost two weeks of hand-wrought spare time in late evenings I started to look for a better approach than following Gentoo or ArchLinux documentation.</p>
+
+                <p>All my Linux installations have a pretty standardized set of features, typically ext4 on LVM, get connected to the same peripherals and even on Gentoo I prefer systemd.
+
+                <p>Typically after a few years when upgrading/replacing harddrives I tend to install the OS from scratch, on otherwise identical hardware.</p>
+
+                <p>It certainly itched me that the kernel configuration did not align with current devops- and infrastructure-as-code-paradigms.</p>
+
+                <p>With this background a few requirements manifested a hopefully decade-long approach for my future needs:</p>
             </header>
             <section>
-                <h2>article section h2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-            </section>
             <section>
-                <h2>article section h2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
+                <h2>Requirements</h2>
+                <p>Must-have:<ul>
+                <li>no GUI usage to edit .config</li>
+                <li>standard set of features to enable/disable</li>
+                <li>per-model set of features on top</li>
+                <li>solid upgrade path</li>
+                </ul></p>
+                <p>Nice to have:<p><ul>
+                <li>snappy boot times</li></ul>
+                <p>As the time-contrained Linux admin-at-home I want scripts to configure my kernel during an upgrade producing stable and snappy user experiences.</p>
+            </section>
+                <h1>Solution</h1>
+                <p>It was a huge revelation to me reading [https://github.com/gg7/gentoo-kernel-guide](https://github.com/gg7/gentoo-kernel-guide) which describes kernel configuration not via `make menuconfig` but the included `./scripts/config` helper.</p>
+                <p>to be continued</p>
             </section>
             <footer>
                 <h3>article footer h3</h3>
