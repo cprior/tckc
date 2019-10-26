@@ -1,3 +1,34 @@
+# Configuring the Linux kernel beyond university years
+
+It was a huge revelation to me reading [https://github.com/gg7/gentoo-kernel-guide](https://github.com/gg7/gentoo-kernel-guide) which describes kernel configuration not via `make menuconfig` but the included `./scripts/config` helper.
+
+In my household is a variety of rather ageing PC hardware from two or three vendors, a network printer, several modems and switches as well as a whole bunch of single-board computers. The notebooks were migrated over the years from Gentoo to Ubuntu because time is much more limited, usually two PCs with Windows are also around as well as one or two Apple things.
+
+When I resurfaced an HP ProLiant Microserver (a small NAS-type of formfactor) the quest to use this energy-efficient device for as much as possible soon led me down the rabbit hole of custom kernel compilation. Armed with years of Gentoo-experience the task did not scare me, but when this took almost two weeks of hand-wrought spare time in late evenings I started to look for a better approach than following Gentoo or ArchLinux documentation.
+
+All my Linux installations have a pretty standardized set of features, typically ext4 on LVM, get connected to the same peripherals and even on Gentoo I prefer systemd.
+
+Typically after a few years when upgrading/replacing harddrives I tend to install the OS from scratch, on otherwise identical hardware.
+
+It certainly itched me that the kernel configuration did not align with current devops- and infrastructure-as-code-paradigms.
+
+With this background a few requirements manifested a hopefully decade-long approach for my future needs:
+
+## Requirements for the time-constrained kernel builder
+
+Must-have:
+
+- no GUI usage to edit .config
+- standard set of features to enable/disable
+- per-model set of features on top
+- solid upgrade path
+
+Nice to have:
+
+- snappy boot times
+
+As the time-contrained Linux admin-at-home I want scripts to configure my kernel during an upgrade producing stable and snappy user experiences.
+
 # Organization of this repository
 
 This repository contains the full project and is therefore in an usual structure. When combining IT and business aspects (and a website is marketing is business) there exists a vey helpful method with [TOGAF](www.opengroup.org/subjectareas/enterprise/togaf "The TOGAF® framework is the de facto global standard for Enterprise Architecture.").
@@ -6,9 +37,9 @@ This repository contains the full project and is therefore in an usual structure
 
 These applications are deployed within the solution, are specificially written for it and far from off-the-shelf.
 
-## ![biz][dot-app-16] backend
+## ![biz][dot-app-16] tckc
 
-[./app/phy/backend](./app/phy/backend)
+[./app/phy/tckc](./app/phy/tckc)
 
 # ![biz][dot-biz-16] business
 
