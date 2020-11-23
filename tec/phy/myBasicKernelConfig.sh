@@ -170,6 +170,36 @@ setPrinterKernelConfig() {
     ./scripts/config --enable USB_PRINTER
 }
 
+setSoundConfig() {
+    ./scripts/config --enable SND_USB_AUDIO
+    ./scripts/config --enable SND_HDA_CODEC_HDMI
+    ./scripts/config --enable USB_GADGET
+    ./scripts/config --enable VIDEOBUF2_V4L2
+    ./scripts/config --enable videobuf2_vmalloc
+    ./scripts/config --enable videobuf2_memops
+    ./scripts/config --enable videobuf2_core
+    ./scripts/config --enable MEDIA_SUPPORT
+    ./scripts/config --enable snd_usb_audio
+    ./scripts/config --enable snd_seq
+#    ./scripts/config --enable 
+#    ./scripts/config --enable 
+}
+
+setVideo4LinuxConfig() {
+    ./scripts/config --enable VIDEO_V4L2
+    ./scripts/config --enable MEDIA_SUPPORT
+    ./scripts/config --enable MEDIA_USB_SUPPORT
+    ./scripts/config --enable VIDEO_ADV_DEBUG
+    ./scripts/config --enable MEDIA_CAMERA_SUPPORT
+    ./scripts/config --enable USB_VIDEO_CLASS
+}
+
+setNtfsConfig() {
+    ./scripts/config --enable NTFS_FS
+    ./scripts/config --enable NTFS_RW
+    ./scripts/config --module FUSE_FS
+}
+
 
 setSystemdKernelConfigFull(){
     # Systemd
@@ -213,4 +243,14 @@ setSystemdKernelConfigFull(){
     ./scripts/config --disable CONFIG_RT_GROUP_SCHED
 
     ./scripts/config --disable CONFIG_AUDIT
+}
+
+setVirtualizationConfig() {
+    ./scripts/config --enable CONFIG_KVM
+    ./scripts/config --enable CONFIG_KVM_INTEL
+    ./scripts/config --enable VIRTIO
+    ./scripts/config --enable VIRT_DRIVERS
+    ./scripts/config --enable DRM_VBOXVIDEO
+    ./scripts/config --enable VBOXGUEST
+    ./scripts/config --enable VBOXSF_FS
 }

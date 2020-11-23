@@ -29,11 +29,6 @@
 ./scripts/config --disable NOUVEAU_DEBUG_MMU
 ./scripts/config --enable DRM_NOUVEAU_BACKLIGHT
 #./scripts/config --disable 
-#./scripts/config --disable 
-#./scripts/config --disable 
-#./scripts/config --disable 
-#./scripts/config --disable 
-#./scripts/config --disable 
 
 #make defconfig already enables several sound-related settings
 ./scripts/config --enable CONFIG_SND_HDA_CODEC_REALTEK
@@ -76,3 +71,6 @@
 ./scripts/config --disable CONFIG_BT_HCIVHCI
 ./scripts/config --disable CONFIG_BT_MRVL
 ./scripts/config --disable CONFIG_BT_ATH3K
+
+
+./scripts/config --enable CONFIG_HID_PLANTRONICS

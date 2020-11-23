@@ -155,18 +155,28 @@ fi
 #  *
 #  */
 
+./scripts/config --enable CONFIG_MODULES # boolean
+
 setBasicKernelConfig
 setFilesystemKernelConfig
 setSystemdKernelConfigFull
-setContainerKernelConfigFull
+#setContainerKernelConfigFull
+setVirtualizationConfig
+
+setSoundConfig
+setVideo4LinuxConfig
+setNtfsConfig
+
+#remove this for general use
+#${__SCRIPTDIR}/../../../tec/phy/LENOVO_ThinkPadT530_239237G.sh
 
 #setGptPartitionLabelSupportKernelConfig
 #setEfiKernelConfig
-#setPrinterKernelConfig
+setPrinterKernelConfig
 
-if [ -f ${__SCRIPTDIR}/tec/phy/${__VENDOR}_${__MODEL}_${__PRODUCTID}.sh ]; then
+if [ -f ${__SCRIPTDIR}/../../../tec/phy/${__VENDOR}_${__MODEL}_${__PRODUCTID}.sh ]; then
     echo -n "Applying configuration for ${__VENDOR} ${__MODEL} with productID ${__PRODUCTID}."
-    ${__SCRIPTDIR}/tec/phy/${__VENDOR}_${__MODEL}_${__PRODUCTID}.sh
+    ${__SCRIPTDIR}/../../../tec/phy/${__VENDOR}_${__MODEL}_${__PRODUCTID}.sh
     echo "..done."
 fi
 
@@ -180,6 +190,7 @@ if [ "${__LOCALYESVERSION}" == "true" ]; then
       yes "" | make ${__SILENT} localyesconfig 1>/dev/null
     fi
     echo "..done."
+    sleep 4
 fi #end if else ...
 
 
@@ -195,6 +206,9 @@ if [ "${__MAKE}" == "true" ]; then
       echo "..done."
       echo -n "make modules."
       make -j5 modules
+      echo "..done."   
+      echo -n "make headers_install."
+      make headers_install
       echo "..done."      
     else
       echo -n "make bzImage (silent)."
@@ -202,6 +216,9 @@ if [ "${__MAKE}" == "true" ]; then
       echo "..done."
       echo -n "make modules (silent)."
       make ${__SILENT} -j5 modules
+      echo "..done."
+      echo -n "make headers_install (silent)."
+      make ${__SILENT} headers_install
       echo "..done."      
     fi
 fi #end if ...

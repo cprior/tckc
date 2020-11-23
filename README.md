@@ -29,6 +29,13 @@ Nice to have:
 
 As the time-contrained Linux admin-at-home I want scripts to configure my kernel during an upgrade producing stable and snappy user experiences.
 
+## How to update (WIP)
+
+cd /usr/src/ && git -C linux-stable-git-bare fetch --all --tags
+git -C linux-stable-git-bare tag --sort=-creatordate
+v=5.4.35 && sudo mkdir "linux-stable-git-$v" && sudo chown "$(id -un):$(id -gn)" "linux-stable-git-$v" && git clone --single-branch --branch "v$v" linux-stable-git-bare/ "linux-stable-git-$v"
+cd /usr/src/linux-stable-git-${v} && ~/Code/github.com/cprior/tckc/app/phy/tckc/tckc.sh -l "CPM" -i
+
 # Organization of this repository
 
 This repository contains the full project and is therefore in an usual structure. When combining IT and business aspects (and a website is marketing is business) there exists a vey helpful method with [TOGAF](www.opengroup.org/subjectareas/enterprise/togaf "The TOGAF® framework is the de facto global standard for Enterprise Architecture.").

@@ -302,3 +302,12 @@ H/W path         Device       Class          Description
 /0/3/0.0.0/1     /dev/sdb1    volume         465GiB EXT4 volume
 /1                            power          45N1001
 /2               wwp0s20u4i6  network        Ethernet interface
+
+
+
+# external hardware
+
+Plantronics BT600 dongle
+
+
+
